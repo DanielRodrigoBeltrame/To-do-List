@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefa</title>
 </head>
+
 <body>
 
     <style>
-        body{
+        body {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
             background-color: azure;
         }
 
+        #lista {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-direction: column;
+            width: 500px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 500px;
+            background-color: blueviolet;
+        }
+
+        }
     </style>
-    
-    <ul></ul>
-    <input><button id="add" onclick="add()">add</button>
+
+    <div class="container">
+    <input id="tarefa"><button id="add" onclick="add()">add</button>
+    </div>
+    <ul id="lista"></ul>
 
     <script>
 
@@ -28,24 +51,29 @@
         const ul = document.querySelector("ul")
 
         //estado da aplicação
-        const tarefas  = ["Tarefa 1", "Tarefa 2"]
+        const tarefas = ["Tarefa 1", "Tarefa 2"]
 
         //alerador de estado da aplicação
-        function add () {
+        function add() {
             tarefas.push(input.value)
+            //limpar input
+            input.value = ""
             render()
 
         }
 
+
         //mostrar o estado da aplicação na tela
         function render() {
-            ul.innerHTML = null
-            tarefas.forEach(t =>{
+                        ul.innerHTML = null
+            tarefas.forEach(t => {
                 const li = document.createElement("li")
                 li.innerText = t
                 ul.appendChild(li)
 
             })
+          
+            
 
         }
         render()
@@ -54,4 +82,5 @@
     </script>
 
 </body>
+
 </html>

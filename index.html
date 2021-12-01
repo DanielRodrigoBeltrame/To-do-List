@@ -20,12 +20,12 @@
             background-color: azure;
         }
 
-        #lista {
+        #todo {
             display: flex;
             justify-content: left;
             align-items: left;
             flex-direction: column;
-            width: 300px;
+            
         }
 
         .adicionar {
@@ -33,26 +33,81 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            width: 300px;
             background-color: blueviolet;
         }
 
         .container {
             display:flex;
             flex-direction: column;
-            background-color: rgb(154, 216, 92);
-            width:300px;
+            background-color: rgb(185, 138, 6);
+            /* width:300px; */
             margin: 30px 0px 0px 0px;
             
         }
-    
+        
+        .kanban{
+
+            display:flex;
+            flex-direction: row;
+            background-color: rgb(2, 128, 19);
+            margin: 30px 0px 0px 0px;
+            border: 2px solid rgb(169, 226, 11);
+        }
+
+        .todo {
+            /* width: 300%;
+            height: 400px */
+            background-color: rgb(96, 105, 107);
+            border: 2px solid chartreuse;
+            
+           
+        }
+
+        .doing {
+
+            /* width: 300%; */
+            /* height: 400px; */
+            display: flex;
+            background-color: rgb(153, 15, 84);
+            border: 2px solid chartreuse;
+        }
+
+        .done {
+            
+            /* width: 300%;
+            height: 400px; */
+            background-color: rgb(132, 153, 15);
+            border: 2px solid chartreuse;
+        }
+
+        .nova {
+            width: 300%;
+            height: 400px;
+        }
     </style>
 
     <div class="container">
+
         <div class="adicionar">
             <input id="tarefa"><button id="add" onclick="add()">add</button>
         </div>
-        <ul id="lista"></ul>
+       
+        <div class="kanban nova">
+
+            <div class="todo nova">
+                <h2>To Do</h2>
+                <ul id="todo"></ul>
+            </div>
+
+            <div class="doing nova">
+                <ul id="doing">teste</ul>
+            </div>
+            
+            <div class="done nova">
+                <ul id="done">teste 2</ul>
+            </div>
+
+        </div>
     </div>
 
     <script>
